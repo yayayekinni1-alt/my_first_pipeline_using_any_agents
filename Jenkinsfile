@@ -1,9 +1,7 @@
 pipeline {
-    agent none
+    agent any
     stages {
-        stage(NPM) {
-            agent any {
-                steps {
+        stage(NPM) steps {
                     sh '''
                     sudo apt update
                     sudo apt install -y npm
