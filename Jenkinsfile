@@ -2,12 +2,14 @@ pipeline {
     agent any
     stages {
         stage('NPM') {
+            agent {
+                docker {
+                    image 'node:26-alpine'
+                }
+            }
             steps {
-                sh '''
-                sudo apt update
-                sudo apt install -y npm
-                npm --version
-                '''
+                sh 'npm --version'
+                sh 'node --version'
             }
         }
     }
