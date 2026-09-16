@@ -1,10 +1,10 @@
 pipeline {
-    agent none
-    stages {
-        stage('NPM') {
-            agent {
+    agent agent {
                 docker {
                     image 'node:26-alpine'
+    stages {
+        stage('NPM') {
+            
                 }
             }
             steps {
